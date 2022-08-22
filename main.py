@@ -368,14 +368,11 @@ def game_loop():
         # clear screen
         refresh_screen()
 
-        ## added new codes here ##
-        # if Ball == [0]:
-        #   global game_winner
-        #   game_is_on = False
-        #   game_winner = True
-
-        # pygame.display.update()
-        # pat_time.tick(FPS)   ## these codes cause vibration on the screen, I don't understand, why? ##
+        # look, whether there is still a remaining ball 
+	
+	is_there_remaining_ball(all_obj)
+	
+	
         for obj in all_obj:
             if
 
