@@ -415,9 +415,3 @@ game_is_over()
 pygame.quit()
 quit()
 
-
-## trying here, is not working ##
-##    if Ball == 0:
-##       game_winner = true
-
-
