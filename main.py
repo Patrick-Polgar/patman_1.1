@@ -311,8 +311,7 @@ def collusion_check(all_obj):
                     score += 1
 
                 if this_obj.obj_name == "Enemy" and this_obj.rect.colliderect(pat_obj.rect):
-                    global game_is_on
-                    game_is_on = False
+                    game_is_over()
 
 
 # game loop
@@ -362,8 +361,6 @@ def game_loop():
 
         if not is_there_remaining_ball(all_obj):
             game_winner()
-            pygame.quit()
-            quit()
 
         # draw all
         draw_all(all_obj)
@@ -392,6 +389,8 @@ def game_is_over():
     pygame.mixer.music.play()
     for i in range(7):
         pat_time.tick(1)
+    pygame.quit()
+    quit()
 
 
 ## added this lines here to create winner option ##
@@ -405,6 +404,8 @@ def game_winner():
     pygame.mixer.music.play()
     for i in range(10):
         pat_time.tick(1)
+    pygame.quit()
+    quit()
 
 
 def is_there_remaining_ball(all_obj):
@@ -415,9 +416,7 @@ def is_there_remaining_ball(all_obj):
 
 
 game_loop()
-game_is_over()
-pygame.quit()
-quit()
+
 
 ## trying here, is not working ##
 ##    if Ball == 0:
