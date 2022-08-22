@@ -341,11 +341,9 @@ def game_loop():
         wy += 1
         wx = 0
 
-
     # Call in sound files and play background music
     pygame.mixer.music.load("Sounds/ghost_song.mp3")
     pygame.mixer.music.play(-1)
-
 
     global game_is_on
     while game_is_on:
@@ -362,6 +360,11 @@ def game_loop():
         # it is checking pacman encounter with ghost or ball...etc
         collusion_check(all_obj)
 
+        if not is_there_remaining_ball(all_obj):
+            game_winner()
+            pygame.quit()
+            quit()
+
         # draw all
         draw_all(all_obj)
 
@@ -376,8 +379,7 @@ def game_loop():
 
         # pygame.display.update()
         # pat_time.tick(FPS)   ## these codes cause vibration on the screen, I don't understand, why? ##
-        for obj in all_obj:
-            if
+
 
 def game_is_over():
     global score
@@ -390,6 +392,7 @@ def game_is_over():
     pygame.mixer.music.play()
     for i in range(7):
         pat_time.tick(1)
+
 
 ## added this lines here to create winner option ##
 def game_winner():
@@ -404,13 +407,11 @@ def game_winner():
         pat_time.tick(1)
 
 
-
 def is_there_remaining_ball(all_obj):
     for obj in all_obj:
         if isinstance(obj, Ball):
-	       return True
+            return True
     return False
-
 
 
 game_loop()
@@ -418,9 +419,6 @@ game_is_over()
 pygame.quit()
 quit()
 
-
 ## trying here, is not working ##
 ##    if Ball == 0:
 ##       game_winner = true
-
-
