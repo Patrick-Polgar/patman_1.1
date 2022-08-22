@@ -36,7 +36,7 @@ def print_small(my_str, color, str_x, str_y):
 size = 50
 score = 0
 half_size = int(size / 2)
-width, height = 20 * size, 14 * size
+width, height = 20 * size, 12 * size
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Patman - the best game ever")
 pat_time = pygame.time.Clock()
@@ -47,18 +47,18 @@ game_is_on = True
 # This list of string we use for building the map #
 # We going to iterate trough to every line and than every charachter
 map = [
-    "XXXXXXXXXXXXXXXXX",
-    "XP.....X      B X",
-    "X XXXX.X XXXXX  X",
-    "X......       G X",
-    "X XX X XXX XX   X",
-    "X XX       XX  XX",
-    "X.XXXX XXX XX   X",
-    "X.....          X",
-    "XXXXX.XX X XX  XX",
-    "X...X.X  X XX  XX",
-    "X.....X  X    GXX",
-    "XXXXXXXXXXXXXXXXX"
+    "XXXXXXXXXXXXXXXX",
+    "XP.....X      BX",
+    "X XXXX.X XXXXX X",
+    "X......       GX",
+    "X XX X XXX XX  X",
+    "X XX       XX XX",
+    "X.XXXX XXX XX  X",
+    "X.....         X",
+    "XXXXX.XX X XX XX",
+    "X...X.X  X XX XX",
+    "X.....X  X   GXX",
+    "XXXXXXXXXXXXXXXX"
 ]
 
 
@@ -376,7 +376,8 @@ def game_loop():
 
         # pygame.display.update()
         # pat_time.tick(FPS)   ## these codes cause vibration on the screen, I don't understand, why? ##
-
+        for obj in all_obj:
+            if
 
 def game_is_over():
     global score
@@ -404,6 +405,14 @@ def game_winner():
 
 
 
+def is_there_remaining_ball(all_obj):
+    for obj in all_obj:
+        if isinstance(obj, Ball):
+	       return True
+    return False
+
+
+
 game_loop()
 game_is_over()
 pygame.quit()
@@ -413,4 +422,5 @@ quit()
 ## trying here, is not working ##
 ##    if Ball == 0:
 ##       game_winner = true
+
 
