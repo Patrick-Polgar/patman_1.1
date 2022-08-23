@@ -341,11 +341,9 @@ def game_loop():
         wy += 1
         wx = 0
 
-
     # Call in sound files and play background music
     pygame.mixer.music.load("Sounds/ghost_song.mp3")
     pygame.mixer.music.play(-1)
-
 
     global game_is_on
     while game_is_on:
@@ -375,8 +373,7 @@ def game_loop():
 
         # clear screen
         refresh_screen()
-	
-	
+
 
 def game_is_over():
     global score
@@ -384,13 +381,14 @@ def game_is_over():
     print_big("Game over", (220, 220, 220), size * 5, size * 4)
     print_med(f"Score: {score}", (220, 220, 220), size * 8, size * 8)
     pygame.display.update()
-    ## Added here " GAME OVER " music ##
+    # Added here " GAME OVER " music ##
     pygame.mixer.music.load("Sounds/Game_Over.mp3")
     pygame.mixer.music.play()
     for i in range(8):
         pat_time.tick(1)
 
-## added this lines here to create winner option ##
+
+# added this lines here to create winner option ##
 def game_winner():
     global score
     screen.fill((0, 0, 0))
@@ -403,17 +401,14 @@ def game_winner():
         pat_time.tick(1)
 
 
-
 def is_there_remaining_ball(all_obj):
     for obj in all_obj:
         if isinstance(obj, Ball):
-	       return True
+            return True
     return False
-
 
 
 game_loop()
 game_is_over()
 pygame.quit()
 quit()
-
