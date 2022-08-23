@@ -382,7 +382,7 @@ def game_is_over():
     global score
     screen.fill((0, 0, 0))
     print_big("Game over", (220, 220, 220), size * 4, size * 2)
-    print_med(f"Score: {score}", (220, 220, 220), size * 8, size * 6)
+    print_med(f"Score: {score}", (220, 220, 220), size * 7, size * 6)
     pygame.display.update()
     ## Added here " GAME OVER " music ##
     pygame.mixer.music.load("Sounds/Game_Over.mp3")
@@ -394,8 +394,8 @@ def game_is_over():
 def game_winner():
     global score
     screen.fill((0, 0, 0))
-    print_big("You are the winner", (220, 220, 220), size * 4, size * 2)
-    print_med(f"Score: {score}", (220, 220, 220), size * 8, size * 6)
+    print_big("You are the winner", (220, 220, 220), size * 2, size * 2)
+    print_med(f"Score: {score}", (220, 220, 220), size * 7, size * 6)
     pygame.display.update()
     pygame.mixer.music.load("Sounds/Winner_sound.mp3")
     pygame.mixer.music.play()
