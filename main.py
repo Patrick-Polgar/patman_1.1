@@ -7,7 +7,7 @@ pygame.init()
 
 small_font = pygame.font.SysFont("Chiller", 35)
 medium_font = pygame.font.SysFont("Chiller", 75)
-big_font = pygame.font.SysFont("Chiller", 150)
+big_font = pygame.font.SysFont("Chiller", 125)
 
 
 def print_big(my_str, color, str_x, str_y):
@@ -48,17 +48,17 @@ game_is_on = True
 # We going to iterate trough to every line and than every charachter
 map = [
     "XXXXXXXXXXXXXXXX",
-    "XP.....X      BX",
-    "X XXXX.X XXXXX X",
-    "X......       GX",
-    "X XX X XXX XX  X",
-    "X XX       XX XX",
-    "X.XXXX XXX XX  X",
-    "X.....         X",
-    "XXXXX.XX X XX XX",
-    "X...X.X  X XX XX",
-    "X.....X  X   GXX",
-    "XXXXXXXXXXXXXXXX"
+    "XP.............X",
+    "X.X.XXXX.XXXXX.X",
+    "X.X.X..X.X.X.X.XXXXX",
+    "X.................GX",
+    "X.X.X.X.XXXX.X.X.X.X",
+    "X.X.X.X.XB.X.X.X.X.X",
+    "X..................X",
+    "X.XXXXXXX..XXXXXXX.X",
+    "X.X..X..X..XG.X..X.X",
+    "X..................X",
+    "XXXXXXXXXXXXXXXXXXXX",
 ]
 
 
@@ -381,25 +381,25 @@ def game_loop():
 def game_is_over():
     global score
     screen.fill((0, 0, 0))
-    print_big("Game over", (220, 220, 220), size * 4, size * 2)
-    print_med(f"Score: {score}", (220, 220, 220), size * 7, size * 6)
+    print_big("Game over", (220, 220, 220), size * 5, size * 4)
+    print_med(f"Score: {score}", (220, 220, 220), size * 8, size * 8)
     pygame.display.update()
     ## Added here " GAME OVER " music ##
     pygame.mixer.music.load("Sounds/Game_Over.mp3")
     pygame.mixer.music.play()
-    for i in range(7):
+    for i in range(8):
         pat_time.tick(1)
 
 ## added this lines here to create winner option ##
 def game_winner():
     global score
     screen.fill((0, 0, 0))
-    print_big("You are the winner", (220, 220, 220), size * 2, size * 2)
-    print_med(f"Score: {score}", (220, 220, 220), size * 7, size * 6)
+    print_big("You are the winner", (220, 220, 220), size * 2, size * 4)
+    print_med(f"Score: {score}", (220, 220, 220), size * 8, size * 8)
     pygame.display.update()
     pygame.mixer.music.load("Sounds/Winner_sound.mp3")
     pygame.mixer.music.play()
-    for i in range(10):
+    for i in range(16):
         pat_time.tick(1)
 
 
