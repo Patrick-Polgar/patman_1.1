@@ -362,19 +362,21 @@ def game_loop():
         # it is checking pacman encounter with ghost or ball...etc
         collusion_check(all_obj)
 
+	
+        # look, whether there is still a remaining ball 
+	
+	if not is_there_remaining_ball(all_obj):
+	    game_winner()
+	    pygame.quit()
+	    quit()
+	
         # draw all
         draw_all(all_obj)
 
         # clear screen
         refresh_screen()
-
-        # look, whether there is still a remaining ball 
-	
-	is_there_remaining_ball(all_obj)
 	
 	
-        for obj in all_obj:
-            if
 
 def game_is_over():
     global score
