@@ -221,7 +221,7 @@ def draw_all(list_of_obj):
 
 
 def refresh_screen():
-    print_small(f"score: {score}", (220, 220, 220), size * 17, size * 2)
+    print_small(f"score: {score}", (220, 220, 220), size * 17, size * 1)
     # update everything into screen
     pygame.display.update()
     # delay for make the graphic seeable
